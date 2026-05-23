@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    </style>
+</head>
+<body class="bg-pink-50">
+    <div class="max-w-5xl mx-auto p-10">
+    <a 
+    href="UTS PW.html"
+    class="inline-block mb-8 bg-white px-5 py-2 rounded-full shadow text-pink-500"
+    >
+    ← Back
+    </a>
+    <h1 class="text-4xl font-bold text-pink-400 mb-10">
+        Shopping Cart
+    </h1>
+    <div id="cart-items" class="space-y-6">
+        <img 
+        src="https://i.pinimg.com/736x/ae/29/31/ae29319f381957665720f324ef2a4052.jpg"
+        alt="Bouquet"
+        class="w-40 h-40 object-cover rounded-3xl"
+        >
+        <div class="flex-1">
+        <h2 class="text-2xl font-semibold">
+            Sweet Pink Rose
+        </h2>
+        <p class="text-gray-500 mt-2">
+            Premium pink rose bouquet
+        </p>
+        <p class="text-pink-500 font-bold text-2xl mt-4">
+            Rp 250.000
+        </p>
+    </div>
+    <button 
+        type="button"
+        class="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 rounded-full"
+        >
+        Checkout
+    </button>
+    </div>
+</div>
+<script>
+const cartItems = document.getElementById("cart-items");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+cart.forEach(product => {
+    cartItems.innerHTML += `
+    <div class="bg-white rounded-3xl shadow-lg p-8 flex items-center gap-6">
+        <img 
+        src="${product.image}"
+        class="w-40 h-40 object-cover rounded-3xl"
+        >
+        <div class="flex-1">
+            <h2 class="text-2xl font-semibold">
+                ${product.name}
+            </h2>
+            <p class="text-pink-500 font-bold text-2xl mt-4">
+                ${product.price}
+            </p>
+        </div>
+    </div>
+    `;
+});
+</script>
+</body>
+</html>

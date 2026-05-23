@@ -14,40 +14,27 @@
     </style>
 </head>
 <body class="bg-pink-50">
-    <header>
-        <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-[40px] overflow-hidden">
-            <nav class="flex items-center justify-between px-10 py-5 bg-white">
-                <div>
-                    <h1 class="text-3xl font-bold text-pink-400">Bloomify</h1>
-                    <p class="text-xs text-gray-500">Bouquet &amp; Gift Shop</p>
-                </div>
-                <ul class="hidden md:flex gap-8 font-medium text-gray-700">
-                    <li class="text-pink-400 border-b-2 border-pink-400 pb-1">Home</li>
-                    <li class="hover:text-pink-400 cursor-pointer">Products</li>
-                    <li class="hover:text-pink-400 cursor-pointer">Categories</li>
-                    <li class="hover:text-pink-400 cursor-pointer">About Us</li>
-                    <li class="hover:text-pink-400 cursor-pointer">Contact</li>
-                </ul>
-                <div class="flex items-center gap-4">
-                    <button type="button" class="text-xl">🔍</button>
-                    <a 
-                        href="Cart.html"
-                        class="text-xl relative inline-block">
-                        🛒
-                        <span
-                        id="cart-count"
-                        class="absolute -top-2 -right-2 bg-pink-400 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                        0
-                    </span>
-                </a>
-                <button type="button" class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-full">
-                    Login
-                </button>
-            </div>
-            </nav>
-        </div>
-    </header>
-    <main>
+    <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-[40px] overflow-hidden">
+    <nav class="flex items-center justify-between px-10 py-5 bg-white">
+        <div>
+        <h1 class="text-3xl font-bold text-pink-400">Bloomify</h1>
+        <p class="text-xs text-gray-500">Bouquet &amp; Gift Shop</p>
+    </div>
+    <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+        <li class="text-pink-400 border-b-2 border-pink-400 pb-1">Home</li>
+        <li class="hover:text-pink-400 cursor-pointer">Products</li>
+        <li class="hover:text-pink-400 cursor-pointer">Categories</li>
+        <li class="hover:text-pink-400 cursor-pointer">About Us</li>
+        <li class="hover:text-pink-400 cursor-pointer">Contact</li>
+    </ul>
+    <div class="flex items-center gap-4">
+        <button type="button" class="text-xl">🔍</button>
+        <button type="button" class="text-xl">🛒</button>
+        <button type="button" class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-full">
+            Login
+        </button>
+    </div>
+    </nav>
     <section class="bg-pink-100 px-10 py-16">
         <div class="grid md:grid-cols-2 items-center gap-10">
         <div>
@@ -86,7 +73,7 @@
             class="w-28 h-28 object-cover rounded-full mx-auto mb-4">
             <h3 class="font-semibold mb-3">Flower Bouquet</h3>
             <a 
-            href="Detail bouqet.html"
+            href="detail.html"
             class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm inline-block">
                 View
             </a>
@@ -96,36 +83,27 @@
             alt="Snack Bouqet"
             class="w-28 h-28 object-cover rounded-full mx-auto mb-4">
             <h3 class="font-semibold mb-3">Snack Bouquet</h3>
-            <a 
-            href="Detail snack.html"
-            class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm inline-block"
-            >
-            View
-            </a>
+            <button type="button" class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm">
+                View
+            </button>
         </div>
         <div class="bg-white border rounded-3xl p-5 text-center shadow-sm hover:shadow-lg transition">
             <img src="https://i.pinimg.com/736x/00/48/e7/0048e71f20fdd85e9b536e19a30d4e19.jpg"
             alt="Gift Box"
             class="w-28 h-28 object-cover rounded-full mx-auto mb-4">
             <h3 class="font-semibold mb-3">Gift Box</h3>
-            <a 
-            href="Gift Box.html"
-            class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm inline-block"
-            >
-            View
-        </a>
+            <button type="button" class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm">
+                View
+            </button>
         </div>
         <div class="bg-white border rounded-3xl p-5 text-center shadow-sm hover:shadow-lg transition">
             <img src="http://i1-c.pinimg.com/1200x/13/5a/83/135a8332f4b7136fae146e603204c2f4.jpg"
             alt="Hampers"
             class="w-28 h-28 object-cover rounded-full mx-auto mb-4">
             <h3 class="font-semibold mb-3">Hampers</h3>
-            <a 
-            href="Hampers.html"
-            class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm"
-            >
-            View
-            </a>
+            <button type="button" class="bg-pink-100 text-pink-500 px-5 py-2 rounded-full text-sm">
+                View
+            </button>
         </div>
     </div>
     </section>
@@ -239,11 +217,6 @@
         © 2026 Bloomify Bouquet &amp; Gift Shop. All Rights Reserved.
     </div>
     </footer>
-<script>
-const cartCount = document.getElementById("cart-count");
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-cartCount.textContent = cart.length;
-</script>
-</main>
+</div>
 </body>
 </html>

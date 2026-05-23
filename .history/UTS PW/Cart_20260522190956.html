@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    </style>
+</head>
+<body class="bg-pink-50">
+    <div class="max-w-5xl mx-auto p-10">
+    <a 
+    href="UTS PW.html"
+    class="inline-block mb-8 bg-white px-5 py-2 rounded-full shadow text-pink-500"
+    >
+    ← Back
+    </a>
+    <h1 class="text-4xl font-bold text-pink-400 mb-10">
+        Shopping Cart
+    </h1>
+    <div id="cart-items" class="flex gap-8 flex-wrap"></div>
+</div>
+<script>
+const cartItems = document.getElementById("cart-items");
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function displayCart() {
+    cartItems.innerHTML = "";
+    if(cart.length === 0){
+        cartItems.innerHTML = `
+        <div class="bg-white rounded-3xl shadow-lg p-10 text-center">
+            <h2 class="text-2xl font-semibold text-gray-600">
+                Keranjang masih kosong 🛒
+            </h2>
+        </div>
+        `;
+        return;
+    }
+    cart.forEach((product, index) => {
+        cartItems.innerHTML += `
+        <div class="bg-white rounded-3xl shadow-lg p-8 flex items-center justify-between gap-6 w-full min-h-[220px]">
+            <div class="flex items-center gap-6">
+                <img 
+                src="${product.image}"
+                alt="${product.name}"
+                class="w-40 h-40 object-cover rounded-3xl"
+                >
+                <div class="w-64">
+                    <h2 class="text-2xl font-semibold min-h-[64px]">
+                        ${product.name}
+                    </h2>
+                    <p class="text-pink-500 font-bold text-2xl mt-4">
+                        ${product.price}
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <button 
+                type="button"
+                class="bg-pink-400 hover:bg-pink-500 text-white px-6 py-3 rounded-full"
+                >
+                    Checkout
+                </button>
+                <button 
+                type="button"
+                onclick="removeItem(${index})"
+                class="border border-red-400 text-red-400 hover:bg-red-400 hover:text-white px-6 py-3 rounded-full"
+                >
+                    Remove
+                </button>
+            </div>
+        </>
+        `;
+    });
+}
+function removeItem(index){
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+displayCart();
+</script>
+</body>
+</html>
