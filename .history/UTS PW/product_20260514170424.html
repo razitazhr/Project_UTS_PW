@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-[40px] overflow-hidden">
+        <!-- NAVBAR -->
+        <nav class="flex items-center justify-between px-10 py-5 bg-white">
+      
+        <!-- Logo -->
+            <div>
+                <h1 class="text-3xl font-bold text-pink-400">Bloomify</h1>
+                <p class="text- xs text-gray-500">Bouquet & Gift Shop</p>
+            </div>
+
+        <!-- Menu -->
+            <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+                <li><a href="UTS PW.html" class="hover:text-pink-400 cursor-pointer">Home</a></li>
+                <li><a href="#" class="text-pink-400 border-b-2 border-pink-400 pb-1">Products</a></li>
+                <li><a href="#" class="hover:text-pink-400 cursor-pointer">Categories</a></li>
+                <li class="hover:text-pink-400 cursor-pointer">About Us</li>
+                <li class="hover:text-pink-400 cursor-pointer">Contact</li>
+            </ul>
+
+      <!-- Right -->
+            <div class="flex items-center gap-4">
+                <button class="text-xl">🔍</button>
+                <button class="text-xl">🛒</button>
+
+                <button class="bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-full">
+                Login
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="relative bg-pink-100 flex items-center justify-between p-10 overflow-hidden ">
+        <div class="relative z-10">
+            <h1 class="text-pink-400 font-bold font-sans text-3xl mb-3">
+            OUR PRODUCTS
+            </h1>
+            <p class="text-sm text-black">Temukan bouquet & gift terbaik untuk<br> 
+            setiap momen spesial🌷
+            </p>  
+        </div>
+        <img src="flower.png" alt="flower" class=" absolute -right-2 -top-3 w-[350px] opacity-90">
+    </div>
+    <div class="bg-white rounded-3xl p-5 flex gap-5 items-center">
+        <div class="bg-gray-100 rounded-4xl">
+            <input 
+                type="text"
+                placeholder="Search product.."
+                class="bg-transparent outline-none text-sm w-full px-5 py-3 focus:ring-2 focus:ring-pink-300 rounded-4xl">
+            </input>  
+        </div>
+         <!-- DROPDOWN -->
+    <select class="bg-gray-100 rounded-full px-5 pr-10 py-3 text-sm text-gray-500 outline-none appearance-none">
+        <option>All Categories</option>
+        <option>Flower Bouquet</option>
+        <option>Snack Bouquet</option>
+        <option>Gift Boxes</option>
+        <option>Hampers</option>
+    </select>
+    
+        
+        
+    </div>
+</body>
+</html>
